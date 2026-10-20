@@ -178,6 +178,7 @@ def build_collage(
         "-map", "[v]", "-map", "[a]",
         "-t", str(TOTAL),
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+        "-maxrate", "5M", "-bufsize", "10M",  # ограничиваем битрейт, чтобы итог не перевалил за лимит 50 МБ
         "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "160k",
         "-movflags", "+faststart",
